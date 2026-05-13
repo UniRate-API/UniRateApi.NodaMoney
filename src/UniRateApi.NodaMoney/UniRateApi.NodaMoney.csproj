@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>
+    <RootNamespace>UniRateApi.NodaMoney</RootNamespace>
+    <AssemblyName>UniRateApi.NodaMoney</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+
+    <IsPackable>true</IsPackable>
+    <PackageId>UniRateApi.NodaMoney</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Unirate Team</Authors>
+    <Company>Unirate Team</Company>
+    <Description>NodaMoney bridge for the UniRate API. Fetch live and historical exchange rates from unirateapi.com and use them as NodaMoney ExchangeRate values to convert Money instances.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/UniRate-API/UniRateApi.NodaMoney</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/UniRate-API/UniRateApi.NodaMoney</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>nodamoney;unirate;exchange-rates;currency;forex;money;fintech</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Copyright>Copyright (c) 2026 Unirate Team</Copyright>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NodaMoney" Version="2.7.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
