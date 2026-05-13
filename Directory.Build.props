@@ -4,5 +4,14 @@
     <Nullable>enable</Nullable>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Supply-chain hardening: write packages.lock.json on every restore,
+         and in CI fail the build if the lockfile's hashes do not match the
+         server's. A poisoned republish of any transitive dep then breaks
+         the build loudly instead of slipping in silently. -->
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode Condition="'$(ContinuousIntegrationBuild)' == 'true'">true</RestoreLockedMode>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
   </PropertyGroup>
 </Project>
+

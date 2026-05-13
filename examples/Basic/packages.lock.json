@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net10.0": {
+      "NodaMoney": {
+        "type": "Transitive",
+        "resolved": "2.7.0",
+        "contentHash": "2+94o9WK9w0Xi0OOkbgX+Nh894/fm1kNDDfq2SUhhg2/deqI96rMG/H3jzI/A0eeOSC92LvtXnj/aipx3aYVVA=="
+      },
+      "unirateapi.nodamoney": {
+        "type": "Project",
+        "dependencies": {
+          "NodaMoney": "[2.7.0, )"
+        }
+      }
+    }
+  }
+}
